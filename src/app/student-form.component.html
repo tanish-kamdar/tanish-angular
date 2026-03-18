@@ -1,0 +1,29 @@
+<div class="form-container">
+  <h3>Register New Student</h3>
+  
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    <div class="field">
+      <label>Full Name</label>
+      <input formControlName="name" placeholder="Enter name">
+      @if (studentForm.get('name')?.invalid && studentForm.get('name')?.touched) {
+        <small class="error">Name is required (min 3 chars).</small>
+      }
+    </div>
+
+    <div class="field">
+      <label>Major</label>
+      <select formControlName="major">
+        <option value="">Select Major</option>
+        <option value="IT">Information Technology</option>
+        <option value="CS">Computer Science</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>GPA</label>
+      <input type="number" formControlName="gpa" placeholder="0.00">
+    </div>
+
+    <button type="submit" [disabled]="studentForm.invalid">Submit Student</button>
+  </form>
+</div>

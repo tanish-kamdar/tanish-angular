@@ -80,6 +80,7 @@
 
   .content {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     width: 100%;
     max-width: 700px;
@@ -186,8 +187,17 @@
 
 <main class="main">
   <div class="content">
+    <h1>University Portal</h1>
     <!-- We are using our own created component -->
-      <app-student-card></app-student-card>
+     <app-student-form (studentAdded)="handleNewStudent($event)"></app-student-form>
+      <h2>Student Records</h2>
+  <div class="card-grid">
+    @for (s of students; track s.id) {
+      <app-student-card [student]="s"></app-student-card>
+    } @empty {
+      <p>No students registered yet. Use the form above!</p>
+    }
+  </div>
   </div>
 </main>
 

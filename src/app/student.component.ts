@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { IfStmt } from '@angular/compiler';
+import { Component , Input} from '@angular/core';
 
 @Component({
   selector: 'app-student-card',
@@ -8,12 +9,6 @@ import { Component } from '@angular/core';
 })
 export class StudentCardComponent {
   // This is your "State"
-  student = {
-    id: 35,
-    name: 'Tanish Kamdar',
-    major: 'Information Technology',
-    gpa: 9.05
-  };
+  @Input() student : any;
 
-  isLoaded = true;
 }
