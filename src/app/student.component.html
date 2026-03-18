@@ -1,0 +1,12 @@
+<div class="card-container">
+  <div class="student-card">
+    <p><strong>ID:</strong> {{ student.id }}</p>
+    <p><strong>Name:</strong> {{ student.name }}</p>
+    <p><strong>Major:</strong> {{ student.major }}</p>
+    <p><strong>GPA:</strong> {{ student.gpa }}</p>
+
+    @if (isLoaded) {
+      <button class="status-btn">Data Loaded!</button>
+    }
+  </div>
+</div>
